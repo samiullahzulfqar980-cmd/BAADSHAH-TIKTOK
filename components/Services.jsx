@@ -33,7 +33,7 @@ function ServiceCard({ s, index }) {
           </ul>
           <a
             className="btn btn-primary btn-sm"
-            href={site.whatsappLink(`Hi BAADSHAH EDITZ! I want to order: ${s.title} 🎮`)}
+            href={site.orderLink()}
             target="_blank"
             rel="noopener noreferrer"
           >

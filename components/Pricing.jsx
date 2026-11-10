@@ -36,9 +36,7 @@ export default function Pricing() {
                 </ul>
                 <a
                   className={`btn ${p.featured ? "btn-primary" : "btn-ghost"}`}
-                  href={site.whatsappLink(
-                    `Hi BAADSHAH EDITZ! I want to order the ${p.name} package (${p.price}). 🎮`
-                  )}
+                  href={site.orderLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

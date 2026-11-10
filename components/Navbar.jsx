@@ -65,13 +65,13 @@ export default function Navbar() {
         ))}
         <a
           className="btn btn-primary"
-          href={site.whatsappLink("Hi BAADSHAH EDITZ! I want to order a Free Fire edit. 🎮")}
+          href={site.orderLink()}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setOpen(false)}
         >
           <span className="shine" />
-          Order Now via WhatsApp
+          Order Now on TikTok 🎵
         </a>
       </div>
     </>

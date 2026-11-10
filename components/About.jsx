@@ -88,7 +88,7 @@ export default function About() {
               <div style={{ marginTop: 28 }}>
                 <a
                   className="btn btn-primary"
-                  href={site.whatsappLink("Hi BAADSHAH EDITZ! Tell me more about your editing services. 🎮")}
+                  href={site.orderLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
