@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+image-search/
+scripts/__pycache__/
+*.log
+.DS_Store
+
+# build output
+out/
