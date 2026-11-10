@@ -18,10 +18,10 @@ responsive, SEO-friendly and animated.
   clips are **generated locally** (`scripts/make_videos.py`, numpy + ffmpeg).
 - 💎 **3 pricing plans** — Basic / Premium (featured) / Pro, editable prices in PKR.
 - 👤 **About** — brand story, feature bullets, animated counters.
-- 📞 **Contact & socials** — TikTok follow button, WhatsApp chat button, Instagram
-  button, and a contact form that opens WhatsApp with a pre-filled message.
+- 📞 **Contact & socials** — TikTok follow button (the only social channel) and a
+  contact form that opens TikTok and copies your order details to paste in a DM.
 - ⚡ Extras — animated loading screen, smooth scrolling, scroll-reveal animations,
-  glassmorphism, glowing buttons, marquee strip, cursor glow, floating WhatsApp
+  glassmorphism, glowing buttons, marquee strip, cursor glow, floating TikTok
   button, custom scrollbar, JSON-LD + Open Graph SEO, mobile hamburger menu.
 
 ## 🚀 Run it
@@ -57,8 +57,8 @@ All texts, links, phone numbers and prices live in **`data/site.js`**:
 
 | What | Where |
 |---|---|
-| WhatsApp number | `site.contact.whatsappNumber` (digits only, with country code, e.g. `923001234567`) |
-| Instagram / TikTok / email | `site.contact.instagram` / `.tiktok` / `.email` |
+| TikTok profile (only social) | `site.contact.tiktok` |
+| Email / location | `site.contact.email` / `.location` |
 | Prices & plan features | `pricing` array in `data/site.js` |
 | Services & descriptions | `services` array |
 | Portfolio videos | `portfolio` array → files in `public/videos/` + posters in `public/images/` |

@@ -19,19 +19,16 @@ export const site = {
   },
 
   // 👇 EDIT YOUR CONTACT DETAILS HERE -------------------------------------
+  // TikTok is the ONLY social / contact channel used on the website.
   contact: {
-    whatsappNumber: "923001234567", // WhatsApp number WITH country code, digits only (e.g. 923001234567)
-    instagram: "https://www.instagram.com/baadshah_editz01", // your Instagram profile URL
     tiktok: "https://www.tiktok.com/@baadshah_editz01", // your TikTok profile URL
     email: "baadshaheditz@gmail.com",
     location: "Pakistan",
   },
   // ------------------------------------------------------------------------
 
-  whatsappLink: (message) =>
-    `https://wa.me/${site.contact.whatsappNumber}?text=${encodeURIComponent(
-      message || "Hi BAADSHAH EDITZ! I want to order a Free Fire video edit. 🎮"
-    )}`,
+  // All "Order Now" / contact CTAs open the TikTok profile
+  orderLink: () => site.contact.tiktok,
 
   stats: [
     { value: 500, suffix: "+", label: "Edits Delivered" },
@@ -72,7 +69,7 @@ export const services = [
   {
     id: "shorts",
     title: "Free Fire Shorts & Reels Editing",
-    desc: "Vertical 9:16 edits optimized for TikTok, Instagram Reels and YouTube Shorts — hook viewers in the first second.",
+    desc: "Vertical 9:16 edits optimized for TikTok, Reels and Shorts — hook viewers in the first second.",
     img: "/images/svc-shorts.jpg",
     tags: ["9:16", "Reels", "Trending"],
   },

@@ -30,12 +30,12 @@ export default function Hero() {
               {hero.primaryCta} →
             </a>
             <a
-              href={site.whatsappLink("Hi BAADSHAH EDITZ! I want to order a Free Fire video edit. 🎮")}
+              href={site.orderLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost"
             >
-              🛒 {hero.secondaryCta}
+              🎵 {hero.secondaryCta}
             </a>
           </div>
 

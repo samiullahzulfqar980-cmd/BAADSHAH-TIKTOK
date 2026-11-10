@@ -85,10 +85,7 @@ const jsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/icon.svg`,
   description: DESCRIPTION,
-  sameAs: [
-    "https://www.tiktok.com/@baadshah_editz01",
-    "https://www.instagram.com/baadshah_editz01",
-  ],
+  sameAs: ["https://www.tiktok.com/@baadshah_editz01"],
   areaServed: "Worldwide",
   serviceType: "Video editing services for Free Fire gaming content",
 };

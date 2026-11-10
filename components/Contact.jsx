@@ -12,25 +12,6 @@ const TikTokIcon = () => (
     />
   </svg>
 );
-const WhatsAppIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366" aria-hidden="true">
-    <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z" />
-  </svg>
-);
-const InstagramIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#ig)" strokeWidth="2" />
-    <circle cx="12" cy="12" r="4" stroke="url(#ig)" strokeWidth="2" />
-    <circle cx="17.2" cy="6.8" r="1.3" fill="url(#ig)" />
-    <defs>
-      <linearGradient id="ig" x1="3" y1="21" x2="21" y2="3">
-        <stop stopColor="#ff7a1a" />
-        <stop offset=".5" stopColor="#ff2d46" />
-        <stop offset="1" stopColor="#a855f7" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", service: services[0].title, message: "" });
@@ -43,12 +24,14 @@ export default function Contact() {
     const msg =
       `Hi BAADSHAH EDITZ! 🎮\n\n` +
       `Name: ${form.name}\n` +
-      `WhatsApp: ${form.phone}\n` +
+      `Contact: ${form.phone}\n` +
       `Service: ${form.service}\n` +
       `Message: ${form.message}`;
-    window.open(site.whatsappLink(msg), "_blank", "noopener,noreferrer");
+    // copy to clipboard so it can be pasted into a TikTok DM
+    if (navigator.clipboard) navigator.clipboard.writeText(msg).catch(() => {});
+    window.open(site.contact.tiktok, "_blank", "noopener,noreferrer");
     setSent(true);
-    setTimeout(() => setSent(false), 6000);
+    setTimeout(() => setSent(false), 7000);
   };
 
   return (
@@ -59,13 +42,13 @@ export default function Contact() {
           <h2>
             LET&apos;S MAKE YOUR NEXT <span className="grad-text">VIRAL EDIT</span>
           </h2>
-          <p>Message us on any platform or send the form — we reply fast, usually within minutes. ⚡</p>
+          <p>Reach us on TikTok — send the form and paste your details in a DM. We reply fast, usually within minutes. ⚡</p>
         </Reveal>
 
         <div className="contact-grid">
           <Reveal className="glass form-card">
             <h3>Send Us a Message</h3>
-            <p>Fill the form — it opens WhatsApp with your order details ready to send.</p>
+            <p>Fill the form — it opens our TikTok profile and copies your order details, just paste them in the DM.</p>
             <form onSubmit={submit}>
               <div className="form-row">
                 <div className="field">
@@ -73,8 +56,8 @@ export default function Contact() {
                   <input id="c-name" required placeholder="e.g. Ahmed Ali" value={form.name} onChange={update("name")} />
                 </div>
                 <div className="field">
-                  <label htmlFor="c-phone">WhatsApp Number</label>
-                  <input id="c-phone" required placeholder="e.g. 03XX-XXXXXXX" value={form.phone} onChange={update("phone")} />
+                  <label htmlFor="c-phone">Phone / IGN</label>
+                  <input id="c-phone" required placeholder="e.g. Ahmed_FF" value={form.phone} onChange={update("phone")} />
                 </div>
               </div>
               <div className="field">
@@ -103,19 +86,19 @@ export default function Contact() {
               </div>
               <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
                 <span className="shine" />
-                Send via WhatsApp 💬
+                Continue on TikTok 🎵
               </button>
               {sent && (
                 <div className="form-success" role="status">
-                  ✅ WhatsApp opened with your message — just hit send!
+                  ✅ TikTok opened and your details were copied — just paste them in the DM!
                 </div>
               )}
             </form>
           </Reveal>
 
           <Reveal delay={140} className="glass social-card">
-            <h3>Follow & Contact</h3>
-            <p>Daily Free Fire edits, behind-the-scenes and exclusive drops.</p>
+            <h3>Follow Us</h3>
+            <p>Daily Free Fire edits, behind-the-scenes and exclusive drops — only on TikTok.</p>
 
             <a className="social-btn tiktok" href={site.contact.tiktok} target="_blank" rel="noopener noreferrer">
               <span className="ic">
@@ -127,35 +110,10 @@ export default function Contact() {
               </span>
             </a>
 
-            <a
-              className="social-btn whatsapp"
-              href={site.whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="ic">
-                <WhatsAppIcon />
-              </span>
-              <span>
-                <b>WhatsApp — Chat Now</b>
-                <span>+{site.contact.whatsappNumber.replace(/(\d{2})(\d{3})(\d{7})/, "$1 $2 $3")}</span>
-              </span>
-            </a>
-
-            <a className="social-btn instagram" href={site.contact.instagram} target="_blank" rel="noopener noreferrer">
-              <span className="ic">
-                <InstagramIcon />
-              </span>
-              <span>
-                <b>Instagram — Follow</b>
-                <span>{site.contact.instagram.replace("https://www.instagram.com/", "@")}</span>
-              </span>
-            </a>
-
             <div className="contact-info">
               <div>✉️ <span><b>Email:</b> {site.contact.email}</span></div>
               <div>📍 <span><b>Based in:</b> {site.contact.location} — serving gamers worldwide</span></div>
-              <div>⏱️ <span><b>Response time:</b> usually within minutes</span></div>
+              <div>⏱️ <span><b>Response time:</b> usually within minutes on TikTok</span></div>
             </div>
           </Reveal>
         </div>
